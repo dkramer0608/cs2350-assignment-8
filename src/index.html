@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Project Starter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 
+    Don't add stylesheets/main.css or javascripts/main.js manually. 
+    They will be added automatically by Webpack.
+  -->
+</head>
+
+<body>
+
+  <style>
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-image: url("images/background.jpg");
+
+    
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+  }
+  
+  .column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+  }
+  
+  .column img:hover {
+    opacity: 1;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .container {
+    position: relative;
+    display: none;
+  }
+  
+  #imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }    
+
+h2, p {
+  color: black;
+  
+}
+  img {
+    width: 50%;
+    height: 50%;
+    color: black;
+  }
+
+  </style>
+
+<div style="text-align:center">
+  <h2>Mountain Themed Gallary</h2>
+  <p>Click an image. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos veniam pariatur, 
+    modi sapiente expedita adipisci amet neque veritatis 
+    cumque doloribus maxime repellat recusandae doloremque! Quis in ad modi ab!</p>
+</div>
+
+
+
+<div class="row">
+  <div class="column">
+    <img src="images/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos veniam pariatur" style="width:75%", onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/2.jpg" alt="Consectetur dignissimos veniam pariatur, modi sapiente expedita adipisci amet neque veritatis" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/3.jpg" alt="Lorem modi sapiente expedita adipisci" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos veniam pariatur" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/5.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos veniam pariatur" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/6.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dignissimos veniam pariatur" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/7.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/8.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/9.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/10.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/11.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="images/12.jpg" alt="image" style="width:75%" onclick="myFunction(this);">
+    <div id="imgtext"></div>
+
+  </div>
+
+</div>
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:50%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  </script>
+
+</body>
+</html>
